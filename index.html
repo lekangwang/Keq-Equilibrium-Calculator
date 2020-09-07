@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equilibrium Calculator</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <section class="title">
+    <div>
+      <div>
+        <h1>Welcome to <span>CalculateX!</span></h1>
+        <h4>
+          CalculateX is a Chemistry 12 tool to help you 
+          find X in equilibrium ICE table problems. Click 
+        <span><a href="#">HERE</a></span> if you get lost.  
+        </h4>
+      </div>
+      <img src="./logo.png" alt="logo">
+    </div>
+  </section>
+
+  <main>
+    <div class="utility">
+      <button id="add-element-btn" onclick="builder.add();">
+        Add Element (+)
+      </button>
+
+      <button id="add-keq-symbol-btn" onclick="builder.keq();">
+        ⇌
+      </button>
+
+      <button id="delete-element-btn" onclick='builder.delete();'>
+        Delete Element (-)
+      </button>
+    </div>
+
+    <div class="equation">
+      <form id="equation-div">
+        <!--Equation displayed here-->
+      </form>
+    </div>
+
+    <div class="keq">
+      <form id="keq-div">
+        <!--Enter keq constant here-->
+        <h1>Enter Keq constant</h1>
+        <input type="number" id="keq-input-field" placeholder="Keq value">
+      </form>
+
+      <div>
+        <button id="equation-submit-btn" onclick="builder.save();">
+          Submit Equation  
+        </button>
+
+        <button id="keq-submit-btn" onclick="builder.saveKeq();">
+          Submit Keq Constant  
+        </button>
+      </div>
+    </div>
+
+    <div class="calculate">
+      <button id="calculate-btn" onclick="calculateX();" title="You can't click yet!" disabled>
+        Calculate X! 
+        <a href="./result.html"></a>
+      </button>
+
+      <button id="reset-btn" onclick="resetDiv();">
+        Reset All
+      </button>
+    </div>
+
+    <section class="results">
+      <h1>Your X Values are: </h1>
+      <div id="x-values"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Le Kang Wang &copy 2020</p>
+  </footer>
+  <script src="./app.js"></script>
+</body>
+</html>

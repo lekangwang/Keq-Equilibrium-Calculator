@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@mixin flex($direction) {
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+$primaryColor: #ac3b61; 
+$blue: #123C69;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  font-size: 16px; 
+  background-color: #EDC7B7;
+  color: #ac3b61;
+}
+
+button{
+  background-color: #123C69;
+  color: white; 
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 1rem;
+  &:hover{
+    background-color: #bab2b5;
+    color: #EEE2DC;
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
+.title {
+  @include flex(column);
+  margin: .5rem;
+  img{
+    width: 40%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 5px 5px rgba(0, 98, 90, 0.4),
+    10px 10px rgba(0, 98, 90, 0.3),
+    15px 15px rgba(0, 98, 90, 0.2),
+    20px 20px rgba(0, 98, 90, 0.1),
+    25px 25px rgba(0, 98, 90, 0.05);
+  }
+
+  div{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5% 2rem;
+    div{
+      @include flex(column);
+      align-items: flex-start;
+      h4{
+        margin-top: 1rem;
+        line-height: 1.7rem;
+        font-style: italic;
+        width: 65%;
+        color: rgb(107, 105, 105);
+        span{
+          a{
+            color: $primaryColor;
+          }
+        }
+      }
+      h1{
+        font-size: 4rem;
+        span{
+          color: rgb(241, 241, 241);
+          font-style: italic;
+          text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+        }
+      }
+    } 
+  }
+}//title 
+
+main{
+  background-color: #EEE2DC;
+  padding: 2%;
+  .utility{
+    width: 35rem; 
+    display: flex;
+    justify-content: space-around;
+    button{
+      margin: 0 .5rem;
+    }
+  }
+
+  .equation{
+    background-color: #fcfbfa;
+    min-height: 10vh;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    div{
+      width: 80%; 
+      margin: 2rem auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      input{
+        height: 2.5rem;
+        width: 25%;
+        padding-left: 1rem;
+        border-radius: 10px;
+      }
+      select{
+        height: 2.5rem;
+        width: 5%;
+        padding: .3rem;
+        border-radius: 10px;
+      }
+    }
+    
+    h1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  } 
+
+  .keq{
+    @include flex(column);
+    form{
+      @include flex(column);
+      margin-bottom: 1rem;
+      h1{
+        margin-bottom: 1rem;
+      }
+      input{
+        height: 3rem;
+        width: 15rem;
+        padding-left: 1rem;
+        border-radius: 10px;
+      }
+    }
+
+    div{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 30rem;
+    }
+  }
+
+  .calculate {
+    button:disabled,
+    button[disabled]{
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
+    }
+  }
+
+  .results{
+    @include flex(column);
+    h1{
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    #x-values{
+      height: 6rem;
+      width: 100%;
+      border-radius: 1rem;
+      background-color: #fcfbfa;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }  
+  }
+}
+
+.x{
+  color: #666666;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+}
+
+footer{
+  p{
+    height: 2.5rem;
+    @include flex(row);
+    justify-content: center;
+  }
+}
